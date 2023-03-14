@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GerardV</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="{ isMenuOpen: false, isMoreOpen: false }" class="antialiased">
+    <!-- Top Section -->
+    <section class="bg-black py-3">
+        <div class="mx-auto w-full max-w-screen-2xl px-5 md:px-12">
+            <div class="flex items-center justify-end gap-4">
+                <div class="text-white text-xs leading-5 md:text-base md:leading-6 text-right">Get your Broken Hill tickets here:<br>29 April at Theatre 44</div>
+                <a class="flex justify-center items-center gap-2 border-2 border-red-600 whitespace-nowrap rounded-full px-4 md:px-5 py-2 text-sm md:text-base duration-300 bg-red-600 text-white hover:opacity-80 font-semibold" href="#" target="_blank">
+                   Buy Tickets
+              </a>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="bg-[#3F0082] text-white relative z-0 overflow-hidden">
+        <div class="mx-auto w-full max-w-screen-2xl px-5 md:px-12">
+            <div class="flex items-center justify-between py-4 md:py-6 gap-8 relative">
+                <div class="absolute -left-96 -top-96 -z-10">
+                    <img class="relative -left-6" width="900" src="assets/images/logo-bg.svg" alt="logo-bg" />
+                </div>
+                <a class="flex-shrink-0" href="index.html">
+                    <img class="w-36 sm:w-auto" src="assets/images/logo.svg" alt="logo" />
+                </a>
+                <ul class="items-center gap-12 lg:flex text-lg hidden">
+                    <li><a href="javascript:;">Show</a></li>
+                    <li><a href="javascript:;">About</a></li>
+                    <li><a href="javascript:;">Reviews</a></li>
+                    <li><a href="javascript:;">Videos</a></li>
+                    <li @click.stop="isMoreOpen = !isMoreOpen" class="relative">
+                        <a class="flex items-center gap-2" href="javascript:;">More <img class="relative top-px"  width="10" src="assets/images/down.svg" alt=""></a>
+                        <div @click.away="isMoreOpen = false" :style="isMoreOpen ? 'max-height: ' + $refs.more.scrollHeight + 'px' : ''" x-ref="more" class="absolute top-full w-40 mt-3 z-40 flex max-h-0 flex-col overflow-hidden bg-black transition-all duration-300">
+                            <ul class="flex flex-col gap-4 py-6 px-5 text-base leading-5 tracking-normal text-white">
+                                <li><a href="javascript:;">Download</a></li>
+                                <li><a href="javascript:;">Video Clips</a></li>
+                                <li><a href="javascript:;">Blog</a></li>
+                                <li><a href="javascript:;">About</a></li>
+                                <li><a href="javascript:;">Link Tree</a></li>
+                                <li><a href="javascript:;">Tickets</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div @click.away="isMenuOpen = false" :style="isMenuOpen ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''" x-ref="menu" class="absolute top-full -left-5 -right-5 z-40 flex lg:hidden max-h-0 flex-col overflow-hidden bg-black transition-all duration-300">
+                    <ul class="flex flex-col gap-4 py-6 px-5 text-base leading-5 tracking-normal text-white">
+                        <li><a href="javascript:;">Home</a></li>
+                        <li><a href="javascript:;">Show</a></li>
+                        <li><a href="javascript:;">About</a></li>
+                        <li>
+                            <span class="w-full block h-px my-0.5 bg-white/20"></span>
+                        </li>
+                        <li><a href="javascript:;">Corporate Entertainment</a></li>
+                        <li><a href="javascript:;">Conferences</a></li>
+                        <li><a href="javascript:;">Sports Clubs</a></li>
+                        <li><a href="javascript:;">AFL Football Clubs</a></li>
+                        <li><a href="javascript:;">Licensed Venues</a></li>
+                        <li>
+                            <span class="w-full block h-px my-0.5 bg-white/20"></span>
+                        </li>
+                        <li><a href="javascript:;">Reviews</a></li>
+                        <li><a href="javascript:;">Videos</a></li>
+                        <li><a href="javascript:;">Download</a></li>
+                        <li>
+                            <span class="w-full block h-px my-0.5 bg-white/20"></span>
+                        </li>
+                        <li><a href="javascript:;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a class="flex justify-center items-center gap-2 border-2 border-white whitespace-nowrap rounded-full w-12 h-12 xl:w-auto xl:h-auto xl:px-4 xl:py-2 duration-300 hover:bg-white hover:text-[#3F0082] font-medium" href="mailto:gerard@gerardv.com">
+                        <svg width="26" viewBox="0 0 46 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M45.834 4.29L33.114 16.29L45.834 28.29C45.869 28.048 45.889 27.804 45.894 27.56V5.02C45.894 4.775 45.874 4.531 45.834 4.29ZM26.104 19.48L44.744 1.85C44.2716 1.27442 43.6781 0.81018 43.0057 0.490395C42.3333 0.17061 41.5986 0.003163 40.854 0H5.74398C4.9994 0.003163 4.2647 0.17061 3.59229 0.490395C2.91988 0.81018 2.32633 1.27442 1.85398 1.85L20.524 19.48C21.2913 20.1663 22.2846 20.5457 23.314 20.5457C24.3434 20.5457 25.3367 20.1663 26.104 19.48ZM0.793978 4.29C0.753978 4.531 0.733978 4.775 0.733978 5.02V27.6C0.733978 27.845 0.753978 28.089 0.793978 28.33L13.514 16.33L0.793978 4.29Z" fill="currentColor"/>
+                        <path d="M27.824 21.3C25.291 23.621 21.357 23.621 18.824 21.3L15.344 18.03L1.86398 30.74C2.33257 31.3195 2.92328 31.7885 3.59396 32.1135C4.26464 32.4384 4.99877 32.6114 5.74398 32.62H40.874C41.6176 32.6103 42.3499 32.4367 43.0188 32.1118C43.6876 31.7869 44.2767 31.3185 44.744 30.74L31.284 18.03L27.824 21.3Z" fill="currentColor"/>
+                      </svg>
+                        <span class="hidden xl:inline">gerard@gerardv.com</span>
+                    </a>
+                    <a class="flex justify-center items-center gap-2 border-2 border-white whitespace-nowrap rounded-full w-12 h-12 xl:w-auto xl:h-auto xl:px-4 xl:py-2 duration-300 bg-white text-[#3F0082] hover:opacity-80 font-medium" href="tel:+61468419994">
+                        <svg width="20" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.756 26.2951L30.5765 25.9282C30.0613 24.7184 23.7313 22.8764 23.2161 22.8061H22.8103C22.0298 22.9544 21.1868 23.6491 19.5321 25.0852C19.3774 25.2328 19.1794 25.3269 18.9672 25.3536C18.7551 25.3803 18.54 25.3382 18.3535 25.2336C16.0798 23.8211 14.0126 22.1006 12.2108 20.1211C10.5532 18.2498 9.20894 16.1227 8.23014 13.8223C8.16561 13.6239 8.15925 13.4111 8.21181 13.2092C8.26437 13.0072 8.37365 12.8246 8.52674 12.6828C10.4078 10.989 11.2117 10.1773 11.2898 9.29531C11.2898 8.78016 10.2205 2.27061 9.08091 1.63839L8.74528 1.41985C8.01159 1.01398 6.91106 0.350533 5.67003 0.569079C5.37335 0.640754 5.08733 0.750963 4.81926 0.896898C3.28901 1.82101 2.00181 3.0975 1.06495 4.61998C0.51859 5.75954 0.284432 16.1015 7.98818 24.8277C15.6919 33.5539 25.1284 33.8427 26.5256 33.5539H26.6739C28.3084 32.8189 29.7371 31.6931 30.834 30.2757C31.9736 28.9176 31.2009 27.2551 30.756 26.3731V26.2951Z" fill="currentColor"/>
+                      </svg>
+                        <span class="hidden xl:inline">+61 468 419 99</span>
+                    </a>
+                    <button @click.stop="isMenuOpen = !isMenuOpen" class="w-9 h-9 flex lg:hidden">
+                      <img class="w-full" src="assets/images/menu.svg" alt="menu"/>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-16">
+                <div class="sm:col-span-5 xl:col-span-6 absolute w-8/12 sm:w-6/12 lg:w-auto lg:relative z-10">
+                    <div class="overflow-hidden xl:h-[700px] relative -left-12 lg:left-0">
+                        <img class="my-12 xl:mt-20 w-full" src="assets/images/gerardv.svg" alt="gerard" />
+                    </div>
+                </div>
+                <div class="sm:col-span-7 xl:col-span-6 flex flex-col justify-center py-8 sm:py-20 text-right lg:text-left relative z-20">
+                    <h2 class="text-xl sm:text-3xl md:text-4xl font-medium mt-6 sm:mt-0 mb-4 sm:mb-6 pl-20 sm:pl-0">Delightful, hilarious, <br> unforgettable entertainment!</h2>
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl xl:text-8xl"><span class="font-extrabold">When</span><br><span class="font-light italic">'The Usual'</span><br><span class="font-extrabold">Won't Do</span></h1>
+                    <div class="mt-20 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 sm:self-center lg:self-start flex-wrap text-center">
+                        <a class="border-2 border-white whitespace-nowrap font-semibold text-sm sm:text-base xl:text-lg rounded-lg px-2 sm:px-5 py-2.5 duration-300 bg-white text-[#3F0082] hover:opacity-80" href="#">For Corporates</a>
+                        <a class="border-2 border-white whitespace-nowrap font-semibold text-sm sm:text-base xl:text-lg rounded-lg px-2 sm:px-5 py-2.5 duration-300 bg-white text-[#3F0082] hover:opacity-80" href="#">For Clubs</a>
+                        <a class="border-2 border-white whitespace-nowrap font-semibold text-sm sm:text-base xl:text-lg rounded-lg px-2 sm:px-5 py-2.5 duration-300 bg-white text-[#3F0082] hover:opacity-80" href="#">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute right-0 bottom-0 -z-10 opacity-30">
+            <img src="assets/images/pattern.png" alt="pattern" />
+        </div>
+    </section>
+</body>
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+
+</html>
