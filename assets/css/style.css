@@ -2573,6 +2573,14 @@ video {
   line-height: 1.25rem;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
+}
+
 .tracking-normal {
   letter-spacing: 0em;
 }
@@ -3386,6 +3394,10 @@ video {
     height: 700px;
   }
 
+  .xl\:h-\[740px\] {
+    height: 740px;
+  }
+
   .xl\:w-auto {
     width: auto;
   }
@@ -3426,5 +3438,13 @@ video {
   .xl\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:leading-snug {
+    line-height: 1.375;
+  }
+
+  .xl\:leading-10 {
+    line-height: 2.5rem;
   }
 }
