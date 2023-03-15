@@ -2581,6 +2581,10 @@ video {
   line-height: 2.5rem;
 }
 
+.leading-\[0\.9\] {
+  line-height: 0.9;
+}
+
 .tracking-normal {
   letter-spacing: 0em;
 }
@@ -3446,5 +3450,17 @@ video {
 
   .xl\:leading-10 {
     line-height: 2.5rem;
+  }
+
+  .xl\:leading-\[0\.9\] {
+    line-height: 0.9;
+  }
+
+  .xl\:leading-\[0\.93\] {
+    line-height: 0.93;
+  }
+
+  .xl\:leading-\[0\.92\] {
+    line-height: 0.92;
   }
 }
